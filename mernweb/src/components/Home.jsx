@@ -1,4 +1,8 @@
 import React from 'react' ;
+import About from './About';
+import Contact from './Contact';
+import Services from './Services';
+import {NavLink} from 'react-router-dom';
 
 const Home = () => {
     return (
@@ -13,14 +17,17 @@ const Home = () => {
                
                {/* Why will it not go center */}
                <div className="buttons d-flex justify-content-center">
-               <button className="btn btn-light me-4 rounded-pill px-4 py-2">Services</button>
-               <button className="btn btn-light me-4 rounded-pill py-2">Find Pets Now</button>
+               <NavLink to="/contact" className="btn btn-light me-4 rounded-pill px-4 py-2">Services</NavLink>
+               <NavLink to= "/service" className="btn btn-light me-4 rounded-pill py-2">Find Pets Now</NavLink>
                 </div>
             </div>
             </div>
             </div>
             </section>
-           
+            {/* By placing these down here it causes an error */}
+           <About/>
+           <Services/>
+           <Contact/>
         </div>
     )
 }

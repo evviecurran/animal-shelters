@@ -15,3 +15,10 @@
   box-shadow: 0 .5rem 1rem rgba(0,0,0, .15);
 };
 
+/* Form */
+.form{
+  background: skyblue;
+  background: linear-gradient(skyblue, teal, 100%);
+}
+
+/* Footer */

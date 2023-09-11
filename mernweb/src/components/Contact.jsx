@@ -9,6 +9,10 @@ const Contact = () => {
                         <div className="col-12">
                         <h3 className="fs-5 text-center mb-0">Contact Us</h3>
                         <h1 className="display-6 text-center mb-4">Have <b>Questions?</b></h1>
+                        {/* Make a hyperlink */}
+                        <h3 className="fs-5 text-center mb-0">
+                          Contact: evviecurran@gmail.com" </h3>
+                        <h3 className="fs-5 text-center mb-0">970-859-8802</h3>
                         <hr className="w-25 mx-auto" />
                         </div>
                     </div>

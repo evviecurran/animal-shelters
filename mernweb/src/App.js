@@ -1,21 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
 // if I put it to NaVbar then it works but 
-import Navbar from './components/NaVbar';
+import Navbar from './components/Navbar';
 import Home from './components/Home';
 import About from './components/About';
 import Services from './components/Services';
 import Contact from './components/Contact';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Login from './components/Login';
-import Register from './components/Register'
+import Register from './components/Register';
 
 // or can do brower route to route
 function App() {
   return (
     <>
-    <Navbar/>
+   
     <Router>
+    <Navbar/>
       <Route exact path= "/" component={Home} />
       <Route exact path="/about" component={About} />
       <Route exact path="/service" component={Services} />

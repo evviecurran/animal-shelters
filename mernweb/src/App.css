@@ -17,8 +17,8 @@
 
 /* Form */
 .form{
-  background: skyblue;
-  background: linear-gradient(skyblue, teal, 100%);
+  background: black;
+  background: linear-gradient (lightyellow, teal, 100%);
 }
 
 /* Footer */

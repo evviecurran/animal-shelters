@@ -16,7 +16,9 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 const user = process.env.mongoUser;
 const pass = process.env.mongoPass;
-const url = `mongodb+srv://${user}:${pass}@cluster1.asqnt.mongodb.net/MyDB`;
+console.log(user, pass);
+const url = `mongodb+srv://${user}:${pass}@cluster1.yvsomvf.mongodb.net/?retryWrites=true&w=majority`;
+
 
 mongoose.connect(url, {
     useNewUrlParser: true,
@@ -25,3 +27,6 @@ mongoose.connect(url, {
 })
 .then(console.log('connecting'))
 .catch(err => console.log(`error: ${err}`));
+
+
+module.exports = mongoose.connection ; 

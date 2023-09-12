@@ -10,12 +10,12 @@ const app = express();
 
 // Configure ENV File + require connection file
 
-dotenv.config({path: './config.env'});
-require('./db/connection');
+const db = require('./db/connection');
+
 const port = process.env.PORT;
 
 // Require Model
-const Users = require('./models/userSchema');
+// const Users = require('./models/userSchema');
 
 // This gets data + cookies from the front end 
 app.use(express.json());
@@ -28,29 +28,32 @@ app.get('/', (req, res)=> {
 })
 
 // Registration 
-app.post('/register', async (req,res)=>{
-    try {
-        // Get body or data
-        const username = req.body.username;
-        const email = req.body.email; 
-        const password = req.body.password; 
-const createUser = new Users({
-    username : username, 
-    email: email, 
-    password: password
-});
+// app.post('/register', async (req,res)=>{
+//     try {
+//         // Get body or data
+//         const username = req.body.username;
+//         const email = req.body.email; 
+//         const password = req.body.password; 
+// const createUser = new Users({
+//     username : username, 
+//     email: email, 
+//     password: password
+// });
 
-// THis save method is used to create or insert a user
-// Before saving or inserting, the password will hash- because of what is placed in userSchema
-    const created = await createUser.save();
-    console.log(created);
-    res.status(200).send("Registered");
+// // THis save method is used to create or insert a user
+// // Before saving or inserting, the password will hash- because of what is placed in userSchema
+//     const created = await createUser.save();
+//     console.log(created);
+//     res.status(200).send("Registered");
 
-    } catch (error) {
-        res.status(400).send(error)
-    }
-})
+//     } catch (error) {
+//         res.status(400).send(error)
+//     }
+// })
+db.once ("open", ()=> {
 // Run server 
 app.listen(port, ()=> {
     console.log("Server is Listening")
+})
+
 })
